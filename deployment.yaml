@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flasks
+  labels:
+    author: Praveen
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flasks
+  template:
+    metadata:
+      labels:
+        app: flasks
+    spec:
+      containers:
+      - name: flasks
+        image: praveensam/flasks
+        ports:
+        - containerPort: 5000
